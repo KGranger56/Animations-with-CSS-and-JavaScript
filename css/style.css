@@ -50,6 +50,10 @@ hp-chooser {
   align-items: center;
 }
 
+hp-chooser.fixed {
+  height: auto;
+}
+
 hp-chooser * {
   max-width: 20%;
   margin: 5% 2.5%;
@@ -57,9 +61,32 @@ hp-chooser * {
 
 hp-chooser.chosen > *.chosen {
   max-width: 30%;
+}
 
+hp-chooser.fixed > *.chosen {
+  max-width: 50%;
+  animation-name: chosen_fixed;
+  animation-duration: 0.5s;
+  margin-top: 5%;
+  margin-right: 14%;
+}
+
+@keyframes chosen_fixed {
+  from {
+    max-width: 30%;
+  }
+
+  to {
+    max-width: 50%;
+    margin-top: 5%;
+    margin-right: 14%;
+  }
+}
+
+hp-chooser.chosen.animate > *.chosen {
   animation-name: chosen;
   animation-duration: 0.5s;
+  animation-timing-function: ease;
 }
 
 @keyframes chosen {
@@ -74,17 +101,69 @@ hp-chooser.chosen > *.chosen {
 
 hp-chooser.chosen > *:not(.chosen) {
   max-width: 16.6%;
+}
 
+hp-chooser.fixed > *:not(.chosen) {
+  max-width: 0%;
+  animation-name: notChosen_fixed;
+  animation-duration: 0.5s;
+}
+
+@keyframes notChosen_fixed {
+  from {
+    max-width: 16.6%;
+  }
+
+  to {
+    max-width: 0%;
+    opacity: 0.25;
+  }
+}
+
+hp-chooser.chosen.animate > *:not(.chosen) {
   animation-name: notChosen;
   animation-duration: 0.5s;
+  animation-timing-function: linear;
+  opacity: 0.25;
 }
 
 @keyframes notChosen {
   from {
     max-width: 20%;
+    opacity: 1;
   }
 
   to {
     max-width: 16.6%;
+    opacity: 0.25;
   }
+}
+
+hp-learn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+hp-learn hp-learn-no,
+hp-learn hp-learn-yes {
+  max-width: 20%;
+}
+
+hp-learn img {
+  max-width: 50%;
+  transition-property: margin;
+  transition-duration: 0.5s;
+}
+
+hp-learn.match img {
+  margin-top: 5%;
+  margin-right: 14%;
+}
+
+hp-learn-no,
+hp-learn-yes {
+  display: none;
 }

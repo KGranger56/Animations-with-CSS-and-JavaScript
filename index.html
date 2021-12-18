@@ -22,15 +22,34 @@
             <img src="/images/square.svg.png" alt="square" />
           </hp-chooser>
           <hp-title>doesn't belong?</hp-title> </hp-slide
-        ><hp-slide>
+        ><hp-slide data-autoadvance="3500">
           <hp-title>Which shape</hp-title>
-          <hp-chooser class="chosen">
+          <hp-chooser class="chosen animate">
             <img src="/images/triangle.svg.png" alt="triangle" />
             <img class="chosen" src="/images/circle.svg.png" alt="circle" />
             <img src="/images/diamond.svg.png" alt="diamond" />
             <img src="/images/square.svg.png" alt="square" />
           </hp-chooser>
           <hp-title>doesn't belong?</hp-title>
+        </hp-slide>
+        <hp-slide data-autoadvance="animationEnd">
+          <hp-title>How did</hp-title>
+          <hp-chooser class="fixed">
+            <img src="/images/triangle.svg.png" alt="triangle" />
+            <img class="chosen" src="/images/circle.svg.png" alt="circle" />
+            <img src="/images/diamond.svg.png" alt="diamond" />
+            <img src="/images/square.svg.png" alt="square" />
+          </hp-chooser>
+          <hp-title>you know?</hp-title>
+        </hp-slide>
+        <hp-slide data-autoadvance="3500">
+          <hp-title>How did</hp-title>
+          <hp-learn class="match">
+            <hp-learn-no>no</hp-learn-no>
+            <img src="/images/circle.svg.png" alt="circle" />
+            <hp-learn-yes>yes</hp-learn-yes>
+          </hp-learn>
+          <hp-title>you know?</hp-title>
         </hp-slide>
       </hp-presentation>
     </hp-content>
