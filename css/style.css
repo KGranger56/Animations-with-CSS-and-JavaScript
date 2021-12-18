@@ -5,7 +5,7 @@ body {
 }
 
 hp-content {
-  background-color: #f00;
+  background-color: lightgray;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -13,17 +13,78 @@ hp-content {
   align-items: center;
 }
 
+hp-presentation > hp-slide {
+  display: none;
+}
+
+hp-presentation > hp-slide.active {
+  display: inline-block;
+}
+
 hp-presentation {
+  background-color: white;
   display: block;
-  background-color: #fff;
   width: 80vmin;
   height: 80vmin;
+  display: inline-block;
+  border: 3px solid black;
+  border-radius: 10px;
 }
 
 hp-slide {
-  display: inline-block;
-  background-color: green;
   width: 80%;
   height: 80%;
   margin: 10%;
+  text-align: center;
+  font-size: 9vmin;
+  font-family: sans-serif;
+}
+
+hp-chooser {
+  display: flex;
+  height: 20vmin;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+hp-chooser * {
+  max-width: 20%;
+  margin: 5% 2.5%;
+}
+
+hp-chooser.chosen > *.chosen {
+  max-width: 30%;
+
+  animation-name: chosen;
+  animation-duration: 0.5s;
+}
+
+@keyframes chosen {
+  from {
+    max-width: 20%;
+  }
+
+  to {
+    max-width: 30%;
+  }
+}
+
+hp-chooser.chosen > *:not(.chosen) {
+  max-width: 16.6%;
+
+  animation-name: notChosen;
+  animation-duration: 0.5s;
+}
+
+@keyframes notChosen {
+  from {
+    max-width: 20%;
+  }
+
+  to {
+    max-width: 16.6%;
+  }
 }

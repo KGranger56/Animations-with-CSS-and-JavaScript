@@ -13,8 +13,24 @@
   <body>
     <hp-content>
       <hp-presentation>
-        <hp-slide>
-          <hp-title>slide show goes here</hp-title>
+        <hp-slide class="active">
+          <hp-title>Which shape</hp-title>
+          <hp-chooser>
+            <img src="/images/triangle.svg.png" alt="triangle" />
+            <img src="/images/circle.svg.png" alt="circle" />
+            <img src="/images/diamond.svg.png" alt="diamond" />
+            <img src="/images/square.svg.png" alt="square" />
+          </hp-chooser>
+          <hp-title>doesn't belong?</hp-title> </hp-slide
+        ><hp-slide>
+          <hp-title>Which shape</hp-title>
+          <hp-chooser class="chosen">
+            <img src="/images/triangle.svg.png" alt="triangle" />
+            <img class="chosen" src="/images/circle.svg.png" alt="circle" />
+            <img src="/images/diamond.svg.png" alt="diamond" />
+            <img src="/images/square.svg.png" alt="square" />
+          </hp-chooser>
+          <hp-title>doesn't belong?</hp-title>
         </hp-slide>
       </hp-presentation>
     </hp-content>
